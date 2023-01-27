@@ -1,0 +1,12 @@
+USE CRUD
+GO
+
+CREATE PROCEDURE SP_ObtenerPuestos
+AS
+BEGIN
+
+	SELECT IdPuesto, Nombre
+	FROM Puesto
+
+END
+GO

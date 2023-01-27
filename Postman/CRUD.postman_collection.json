@@ -1,0 +1,923 @@
+{
+	"info": {
+		"_postman_id": "1386c692-2843-49ec-b5eb-d04abbf20e36",
+		"name": "CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13725404"
+	},
+	"item": [
+		{
+			"name": "Acceso",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdEmpleado\": \"90000000\",\r\n    \"Contraseña\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "Get Empleado (Por Nombre)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUxMjY5NCwiZXhwIjoxNjc0NTEzMjk0fQ.AXlRxVtSq6wXkrYfrFLK2mIAQDGGDgL2hcoQz4kyP8GCzMysVLFsEF3rpg67WYAnyLn82BDX01B9n_603c48HQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"Eri\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Empleado (Por Id)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUxMjY5NCwiZXhwIjoxNjc0NTEzMjk0fQ.AXlRxVtSq6wXkrYfrFLK2mIAQDGGDgL2hcoQz4kyP8GCzMysVLFsEF3rpg67WYAnyLn82BDX01B9n_603c48HQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdEmpleado\": \"90000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/empleado/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"empleado",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Empleado (Todos)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDc5NDY5OSwiZXhwIjoxNjc0Nzk1Mjk5fQ.Hr1kEHMUK7h0IoUwQertywh-RS-aXtb9zENMWu9mSnBaatSWieweIwDMhAL6z6-Ixcu9IhGl4IZR3g22qaUdEQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/empleado/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"empleado",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Empleado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6Ijk3ODM2NzExIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDQxMjkyNCwiZXhwIjoxNjc0NDEzNTI0fQ.zsskKAiFCMZReBhc7Mt_6Ve4yGrPla04jQjJTySUlDlmCohKtZnzg2FwDk2KgdVVR1n_E8y7gjWjoBBvmH6yTQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdEmpleado\": \"90000000\",\r\n    \"Nombre\": \"Ericc\",\r\n    \"Apellido\": \"Gaxiola\",\r\n    \"IdPuesto\": \"1\",\r\n    \"Contraseña\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Empleado",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6Ijk3ODM2NzExIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUwODU0OCwiZXhwIjoxNjc0NTA5MTQ4fQ.V0fUzW2j9V2idLOGwKWbCiDpe1mj4etVV3-HYFRcCSDzKwqdvCz7WHokZAj0ClK4ZLNaQEopjpin99OvR_xbMg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdEmpleado\": \"90000000\",\r\n    \"Nombre\": \"Ericc\",\r\n    \"Apellido\": \"Gaxiola\",\r\n    \"IdPuesto\": \"1\",\r\n    \"Contraseña\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/empleado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"empleado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6Ijk3ODM2NzExIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUwOTAyNywiZXhwIjoxNjc0NTA5NjI3fQ.ST2ceh4bMrTxICuSIETZIqtSuAdDeJHfiunT6bnX4mgLda58D5pAP0TAIqzRDOO6iO9jEHFTvagGpI0xGDODqw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/empleado/90000003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"empleado",
+								"90000003"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "Get Cliente (Por Nombre)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU0MjI0NCwiZXhwIjoxNjc0NTQyODQ0fQ.4mQzECDUjpcV1ZMQLT72klnCboUZh9vaTr0zLbnhiPRlTMR-9WAZYIsrYpG78ezEWjyXkPGWknaabdOI3pd8Nw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"p\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cliente (Por Id)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU0MjI0NCwiZXhwIjoxNjc0NTQyODQ0fQ.4mQzECDUjpcV1ZMQLT72klnCboUZh9vaTr0zLbnhiPRlTMR-9WAZYIsrYpG78ezEWjyXkPGWknaabdOI3pd8Nw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdCliente\": \"90000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cliente (Todos)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU0MjI0NCwiZXhwIjoxNjc0NTQyODQ0fQ.4mQzECDUjpcV1ZMQLT72klnCboUZh9vaTr0zLbnhiPRlTMR-9WAZYIsrYpG78ezEWjyXkPGWknaabdOI3pd8Nw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/cliente/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Cliente",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU0MjI0NCwiZXhwIjoxNjc0NTQyODQ0fQ.4mQzECDUjpcV1ZMQLT72klnCboUZh9vaTr0zLbnhiPRlTMR-9WAZYIsrYpG78ezEWjyXkPGWknaabdOI3pd8Nw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdCliente\": \"90000001\",\r\n    \"Nombre\": \"Dannia\",\r\n    \"Apellido\": \"Ortega\",\r\n    \"FechaNacimiento\": \"1995-05-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU0MjI0NCwiZXhwIjoxNjc0NTQyODQ0fQ.4mQzECDUjpcV1ZMQLT72klnCboUZh9vaTr0zLbnhiPRlTMR-9WAZYIsrYpG78ezEWjyXkPGWknaabdOI3pd8Nw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdCliente\": \"90000000\",\r\n    \"Nombre\": \"Pedro\",\r\n    \"Apellido\": \"Torres Castro\",\r\n    \"FechaNacimiento\": \"1990-01-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/cliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU0MjI0NCwiZXhwIjoxNjc0NTQyODQ0fQ.4mQzECDUjpcV1ZMQLT72klnCboUZh9vaTr0zLbnhiPRlTMR-9WAZYIsrYpG78ezEWjyXkPGWknaabdOI3pd8Nw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/cliente/90000000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"cliente",
+								"90000000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventario",
+			"item": [
+				{
+					"name": "Get Inventario (Todos)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUyMzM4OSwiZXhwIjoxNjc0NTIzOTg5fQ.AcocH3trmsnDerVIL5GzlPX11wWa6ieW4zgZKkwtfPVlcOe0-Zz2VXKnHQd8BN-4AhVeIYHBoVENFXcbCjTB4w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/inventario/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"inventario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inventario (Por SKU)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUyMzM4OSwiZXhwIjoxNjc0NTIzOTg5fQ.AcocH3trmsnDerVIL5GzlPX11wWa6ieW4zgZKkwtfPVlcOe0-Zz2VXKnHQd8BN-4AhVeIYHBoVENFXcbCjTB4w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"SKU\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/inventario/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"inventario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Inventario (Por Nombre)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDc3NTE5MiwiZXhwIjoxNjc0Nzc1NzkyfQ.5uE_eDaHmiSmdyk0sokiYp0HL2BpGWn_qTurfIcC2Aoi36oH_UVv0-0SZpI218ykr0a86eMkwnH1YpdSKGU8KA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Nombre\": \"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/inventario/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"inventario",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Inventario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUyMzM4OSwiZXhwIjoxNjc0NTIzOTg5fQ.AcocH3trmsnDerVIL5GzlPX11wWa6ieW4zgZKkwtfPVlcOe0-Zz2VXKnHQd8BN-4AhVeIYHBoVENFXcbCjTB4w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"SKU\": \"2\",\r\n    \"Nombre\": \"Jabón\",\r\n    \"Cantidad\": 105\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/inventario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"inventario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Inventario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUyMzM4OSwiZXhwIjoxNjc0NTIzOTg5fQ.AcocH3trmsnDerVIL5GzlPX11wWa6ieW4zgZKkwtfPVlcOe0-Zz2VXKnHQd8BN-4AhVeIYHBoVENFXcbCjTB4w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"SKU\": \"1\",\r\n    \"Nombre\": \"Pack 3 Jabones\",\r\n    \"Cantidad\": 50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/inventario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"inventario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Inventario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDUxOTg5NCwiZXhwIjoxNjc0NTIwNDk0fQ.sWU_XQmTJuH-24Pdr4hiq81M2K9qzKBPfDHjmmS3yq49EFfRFDS_baCGHMf3hti5mcLgyqAd4pTNbvE7F8vWzg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/inventario/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"inventario",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Polizas",
+			"item": [
+				{
+					"name": "Post Polizas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU1MDk1MiwiZXhwIjoxNjc0NTUxNTUyfQ.CAPPHGvZM1-1YrI95ns1I_GlgtZWOcGE_y8mPxZZ75bxSw_xQ3jAhDCNZh_hf4J9AqUaIEZ2MeGoehoLq41_Ow",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"EmpleadoGenero\": \"90000000\",\r\n    \"SKU\": \"1\",\r\n    \"Cantidad\": 2,\r\n    \"Fecha\": \"2023-01-24\",\r\n    \"IdCliente\": \"90000001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/polizas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"polizas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Put Polizas",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU1MTU1OSwiZXhwIjoxNjc0NTUyMTU5fQ.UyigtmwyBlFL4TgME9JInoqUOIr0oNLFBcamQ62p0f0HynwC5HfoFtJiPcWyauVt8F4hAs-m8H5rWHVmdj7Sag",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdPolizas\": 5,\r\n    \"EmpleadoGenero\": \"90000000\",\r\n    \"SKU\": \"2\",\r\n    \"Cantidad\": 10,\r\n    \"Fecha\": \"2023-01-24\",\r\n    \"IdCliente\": \"90000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/polizas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"polizas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Polizas (Todas)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDgxMzE4NywiZXhwIjoxNjc0ODEzNzg3fQ.sVixBfAp_AXHT8YUiivfFod0zTVr1e-6DLPxDAI9AiWQNtXTMJQvKDFpHZyuIt0zNmjwGLKQqxx-XQFLUsQr1A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/polizas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"polizas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Polizas (Por Id)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDgwOTU2MywiZXhwIjoxNjc0ODEwMTYzfQ.bCoZUDJXiPobIVes52cAlUwrFGKT0EEfYReFscWVg0iDwR7FoKaMPK6wSlUZNZ04R5mDrBjlD9Sr643o7M4VXg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/polizas/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"polizas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Polizas",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU1MTU1OSwiZXhwIjoxNjc0NTUyMTU5fQ.UyigtmwyBlFL4TgME9JInoqUOIr0oNLFBcamQ62p0f0HynwC5HfoFtJiPcWyauVt8F4hAs-m8H5rWHVmdj7Sag",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"IdPolizas\": 5,\r\n    \"EmpleadoGenero\": \"90000000\",\r\n    \"SKU\": \"2\",\r\n    \"Cantidad\": 10,\r\n    \"Fecha\": \"2023-01-24\",\r\n    \"IdCliente\": \"90000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/polizas/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"polizas",
+								"15"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Puesto",
+			"item": [
+				{
+					"name": "Get Puesto",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU5Mjg0NywiZXhwIjoxNjc0NTkzNDQ3fQ.SKlB9AN_gZtvdNl_jHaf4eQmjAaLJffJXVcBE-s7ClBuKjuZN3GQzvphhbzizWDa7r3ZDBuSn8DiCr178kf-NA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/puesto",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"puesto"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Log",
+			"item": [
+				{
+					"name": "Post Log",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Sistema\":\"Polizas\",\r\n    \"Metodo\":\"Main\",\r\n    \"Tipo\":\"Error\",\r\n    \"Descripcion\":\"Error al cargar el aplicativo.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/api/log",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"log"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Log",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJKV1RfQ1JVRCIsInN1YiI6IjkwMDAwMDAwIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY3NDU5MTY5MiwiZXhwIjoxNjc0NTkyMjkyfQ.Egg-OueROm8IynD1bKKkS4eznCMMALO5eafk7uKTM-l4Yykot0QKMQYVCkOZH-tmxDSagiX_vxjf-HOEC7WMjA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/api/log/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"api",
+								"log",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
